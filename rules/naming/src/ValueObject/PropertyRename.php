@@ -8,33 +8,28 @@ use PhpParser\Node\Stmt\ClassLike;
 use PhpParser\Node\Stmt\Property;
 use PHPStan\Type\Type;
 
-class PropertyRename extends Property
+final class PropertyRename extends Property
 {
-    /**
-     * @var Property
-     */
-    private $property;
-
     /**
      * @var string
      */
     private $expectedName;
-
     /**
      * @var string
      */
     private $currentName;
-
+    /**
+     * @var Property
+     */
+    private $property;
     /**
      * @var Type
      */
     private $propertyType;
-
     /**
      * @var ?ClassLike
      */
     private $classLike;
-
     public function __construct(
         Property $property,
         string $expectedName,
@@ -48,27 +43,22 @@ class PropertyRename extends Property
         $this->propertyType = $type;
         $this->classLike = $classLike;
     }
-
     public function getProperty(): Property
     {
         return $this->property;
     }
-
     public function getExpectedName(): string
     {
         return $this->expectedName;
     }
-
     public function getCurrentName(): string
     {
         return $this->currentName;
     }
-
     public function getPropertyType(): Type
     {
         return $this->propertyType;
     }
-
     public function getClassLike(): ?ClassLike
     {
         return $this->classLike;

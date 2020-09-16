@@ -14,7 +14,7 @@ use Rector\Core\Rector\AbstractRector\NodeTypeResolverTrait;
 use Rector\Naming\Guard\BreakingVariableRenameGuard;
 use Rector\Naming\ValueObject\PropertyRename;
 
-class PropertyRenamer
+final class PropertyRenamer
 {
     use NameResolverTrait;
     use NodeTypeResolverTrait;

@@ -252,6 +252,13 @@ final class BreakingVariableRenameGuard
     /**
      * @param Param|Property $node
      */
+    private function isRamseyUuidInterface(Node $node): bool
+    {
+        return $this->nodeTypeResolver->isObjectType($node, UuidInterface::class);
+    }
+    /**
+     * @param Param|Property $node
+     */
     private function isDateTimeAtNamingConvention(Node $node): bool
     {
         $type = $this->nodeTypeResolver->resolve($node);
@@ -270,13 +277,5 @@ final class BreakingVariableRenameGuard
         }
 
         return (bool) Strings::match($currentName, '#[\w+]At$#');
-    }
-
-    /**
-     * @param Param|Property $node
-     */
-    private function isRamseyUuidInterface(Node $node): bool
-    {
-        return $this->nodeTypeResolver->isObjectType($node, UuidInterface::class);
     }
 }
