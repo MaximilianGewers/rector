@@ -256,6 +256,7 @@ final class BreakingVariableRenameGuard
     {
         return $this->nodeTypeResolver->isObjectType($node, UuidInterface::class);
     }
+
     /**
      * @param Param|Property $node
      */
