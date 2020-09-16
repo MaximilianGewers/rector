@@ -452,3 +452,4 @@ parameters:
         - '#Post operation are forbidden, as they make 2 values at the same line\. Use pre instead#'
         - '#Use value object over multi array assign#'
 
+        - '#(.*?) expects class\-string, string given#'
